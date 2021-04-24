@@ -30,10 +30,10 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    include: [{
+    include: {
       model: Product,
       attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
-    }]
+    }
 
   })
     .then(dbCategoryData => {
